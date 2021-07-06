@@ -1,9 +1,12 @@
 #include <Arduino.h>
 
+#include <ADSampler.hpp>
+
+ADSampler sampler = ADSampler();
+
 void setup() {
-  // put your setup code here, to run once:
+  sampler.setup();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 }
