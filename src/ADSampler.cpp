@@ -14,13 +14,11 @@
 ADSampler::ADSampler(void) {
     // create a dma buffer for the first adc
     DMAMEM static volatile uint16_t __attribute__((aligned(32))) dma_adc_buff1[buffer_size];
-    DMAMEM static volatile uint16_t __attribute__((aligned(32))) dma_adc_buff2[buffer_size];
-    abdma1 = new AnalogBufferDMA(dma_adc_buff1, buffer_size, dma_adc_buff2, buffer_size);
+    abdma1 = new AnalogBufferDMA(dma_adc_buff1, buffer_size);
 
     // create a dma buffer for the second adc
-    DMAMEM static volatile uint16_t __attribute__((aligned(32))) dma_adc_buff2_1[buffer_size];
-    DMAMEM static volatile uint16_t __attribute__((aligned(32))) dma_adc_buff2_2[buffer_size];
-    abdma2 = new AnalogBufferDMA(dma_adc_buff2_1, buffer_size, dma_adc_buff2_2, buffer_size);
+    DMAMEM static volatile uint16_t __attribute__((aligned(32))) dma_adc_buff2[buffer_size];
+    abdma2 = new AnalogBufferDMA(dma_adc_buff2, buffer_size);
 }
 
 /*!
