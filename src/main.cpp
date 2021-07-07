@@ -14,7 +14,6 @@ volatile uint32_t endtime;
 
 void setup() {
   sampler.setup(ADC0_PIN, ADC1_PIN);
-  sampler.setSampleRate(1000000); // 1 Msps
 
   Serial.begin(9600);
 }

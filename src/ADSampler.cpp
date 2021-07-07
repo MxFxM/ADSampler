@@ -83,8 +83,8 @@ void ADSampler::startSampling(void) {
     //adc->adc0->startSingleRead(adc0_pin);
     //adc->adc1->startSingleRead(adc1_pin);
 
-    adc->adc0->startTimer(samplerate);
-    adc->adc1->startTimer(samplerate);
+    adc->adc0->startTimer(SAMPLE_RATE);
+    adc->adc1->startTimer(SAMPLE_RATE);
 }
 
 /*!
@@ -99,20 +99,6 @@ void ADSampler::stopSampling(void) {
     //abdma2->clearInterrupt();
     //abdma1->clearCompletion();
     //abdma2->clearCompletion();
-}
-
-/*!
- * @brief Set Sample Rate
- *
- * Set the sample rate.
- * The real sample rate can differ, because the CPU clock limits the possibilites.
- * To get the real sample rate, use getSampleRate().
- * Both ADCs run at the same sample rate.
- * 
- * @param rate sample rate in Hz
- */
-void ADSampler::setSampleRate(uint32_t rate) {
-    samplerate = rate;
 }
 
 /*!

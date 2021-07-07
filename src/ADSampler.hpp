@@ -20,8 +20,6 @@ class ADSampler {
     int adc0_pin;
     int adc1_pin;
 
-    uint32_t samplerate = 1000;
-
     public:
         ADSampler(void);
 
@@ -29,8 +27,6 @@ class ADSampler {
 
         void startSampling(void);
         void stopSampling(void);
-
-        void setSampleRate(uint32_t samplerate);
 
         uint32_t getSampleRate(void);
         boolean getDone(void);
