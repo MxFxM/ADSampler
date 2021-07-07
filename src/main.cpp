@@ -7,6 +7,8 @@ ADSampler sampler = ADSampler();
 #define ADC0_PIN A0
 #define ADC1_PIN A1
 
+#define PWM_PIN 9
+
 volatile boolean converting = false;
 
 volatile uint32_t starttime;
@@ -14,6 +16,11 @@ volatile uint32_t endtime;
 
 void setup() {
   sampler.setup(ADC0_PIN, ADC1_PIN);
+
+  pinMode(PWM_PIN, OUTPUT);
+  analogWriteResolution(9);
+  analogWriteFrequency(PWM_PIN, 74000);
+  analogWrite(PWM_PIN, 100);
 
   Serial.begin(9600);
 }
