@@ -146,7 +146,6 @@ void ADSampler::print(Stream *s) {
     volatile uint16_t *pbuffer1 = abdma2->bufferLastISRFilled();
     volatile uint16_t *end_pbuffer1 = pbuffer1 + abdma2->bufferCountLastISRFilled();
 
-    //if ((uint32_t)pbuffer >= 0x20200000u)  arm_dcache_delete((void*)pbuffer, sizeof(dma_adc_buff1));
     while (pbuffer0 < end_pbuffer0 && pbuffer1 < end_pbuffer1) {
         s->write(*pbuffer0 >> 8 & 0xFF);
         s->write(*pbuffer0 & 0xFF);

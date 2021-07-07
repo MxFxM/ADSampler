@@ -38,7 +38,7 @@ void loop() {
     }
   } else {
     if (Serial.available()) {
-      if (Serial.read() == char('S')) {
+      if (Serial.read() == char('s')) {
         sampler.startSampling();
         starttime = micros();
 
